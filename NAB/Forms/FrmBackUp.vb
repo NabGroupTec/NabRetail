@@ -49,7 +49,7 @@ Public Class FrmBackUp
                     Exit Sub
                 End If
 
-                Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=Nab_User;Password=q1w2e3r4t5")
+                Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB )
                 If SqlCon.State <> ConnectionState.Open Then SqlCon.Open()
 
 
@@ -130,7 +130,7 @@ Public Class FrmBackUp
             End If
             Me.Enabled = False
             If File.Exists(TxtPathRestore.Text) Then
-                Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=Nab_User;Password=q1w2e3r4t5")
+                Dim SqlCon As New SqlConnection("Data Source=LocalHostUser ID=" & PublicFunction.UserDB & ";User ID=" & PublicFunction.PasswordDB)
                 If SqlCon.State <> ConnectionState.Open Then SqlCon.Open()
 
                 '''''''''''''''''''''''''''''''''''''''''''''''Extract ZipFile

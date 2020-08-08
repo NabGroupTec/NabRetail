@@ -1,14 +1,28 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
 Public Class LoginForm
+
     Dim ds As New DataTable
     Dim dta As New SqlDataAdapter
     Dim dsP As New DataTable
     Dim dtaP As New SqlDataAdapter
     Dim idu As Long
-    
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
+
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
+    End Function
+
+    <DllImportAttribute("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
+
     Private Function SetDataSource(ByVal server As String) As String
-        Return String.Format("Data Source= {0};Initial Catalog={1};User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0", server, CmbPeriod.SelectedValue)
+        Return String.Format("Data Source= {0};Initial Catalog={1};User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0", server, CmbPeriod.SelectedValue)
     End Function
 
     Private Sub LoginForm_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
@@ -22,7 +36,7 @@ Public Class LoginForm
     Private Sub LoginForm_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
         Me.GetKey(e)
     End Sub
-    
+
     Private Sub LoginForm_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Try
             SetTitle()
@@ -33,7 +47,7 @@ Public Class LoginForm
             MsgBox(ex.Message)
         End Try
     End Sub
-   
+
     Private Sub GetPath(ByVal typ As String)
         Try
             If typ = "GET" Then
@@ -60,8 +74,9 @@ Public Class LoginForm
         Catch ex As Exception
 
         End Try
-        
+
     End Sub
+
     Public Function AreYouServerExit() As Boolean
         Try
             Dim Address As String = GetPath()
@@ -99,47 +114,11 @@ Public Class LoginForm
                     Return str.Substring(0, str.IndexOf(vbCrLf))
                 End If
             End If
-
         Catch ex As Exception
             Return ""
         End Try
     End Function
 
-    Private Sub BtnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnOk.Click
-        TxtUser.Text = TxtUser.Text.Replace("*", "").Replace("?", "").Replace("؟", "").Replace("'", "").Replace("|", "")
-        TxtPass.Text = TxtPass.Text.Replace("*", "").Replace("?", "").Replace("؟", "").Replace("'", "").Replace("|", "")
-
-        If String.IsNullOrEmpty(TxtUser.Text.Trim) Then
-            MessageBox.Show("نام کاربری را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            TxtUser.Focus()
-            Exit Sub
-        End If
-
-        If String.IsNullOrEmpty(CmbAccount.Text) Or String.IsNullOrEmpty(CmbPeriod.Text) Then
-            MessageBox.Show("اطلاعات دفتر حسابداری وجود ندارد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Application.Exit()
-        End If
-        If String.IsNullOrEmpty(CmbPeriod.Text) Then
-            MessageBox.Show("اطلاعات دوره مالی وجود ندارد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Application.Exit()
-        End If
-
-        DataSource = Me.SetDataSource(TxtAddress.Text.Trim)
-        ConectionBank.ConnectionString = DataSource
-        Me.Enabled = False
-        If AreYouLoging(TxtUser.Text.Trim, TxtPass.Text.Trim) = False Then
-            Me.Enabled = True
-            Exit Sub
-        End If
-        Me.GetPath("SAVE")
-
-        TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "ورود به سیستم", "ورود", "", "")
-
-        Me.Enabled = True
-        Dim mfrm As New FrmMain
-        Me.Hide()
-        mfrm.Show()
-    End Sub
     Private Function AreYouLoging(ByVal User As String, ByVal Pass As String) As Boolean
         Try
             Dim key As New System.Security.Cryptography.DESCryptoServiceProvider
@@ -185,7 +164,6 @@ Public Class LoginForm
                 Dim rowLogIn() As DataRow = ds_U.Select("LogIn>=" & 1)
                 Tmp_Mon = rowLogIn.Length
 
-
                 ' If String.IsNullOrEmpty(Trial) Then
                 'Using LSecurity As New LauncherNetwork.LauncherNetworkControl
                 'If Not (LSecurity.NtCounter(TxtAddress.Text.Trim) > Tmp_Mon) Then
@@ -199,7 +177,6 @@ Public Class LoginForm
                     Return False
                 End If
                 'End If
-
 
                 Nam_Account = CmbAccount.Text
                 Id_Account = CmbAccount.SelectedValue
@@ -276,10 +253,6 @@ Public Class LoginForm
         End Try
     End Function
 
-    Private Sub BtnExit_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnExit.Click
-        Application.Exit()
-    End Sub
-
     Private Sub BtnConnect_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnConnect.Click
         If BtnConnect.Text = "اتصال" Then
             If String.IsNullOrEmpty(TxtAddress.Text.Trim) Then
@@ -291,8 +264,9 @@ Public Class LoginForm
             BtnConnect.Image = My.Resources.progress
             Application.DoEvents()
             TxtAddress.Enabled = False
+
             Try
-                Dim sourec As String = String.Format("Data Source={0};User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0", TxtAddress.Text.Trim)
+                Dim sourec As String = String.Format("Data Source={0};User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0", TxtAddress.Text.Trim)
                 If ConnectionTest(sourec) Then
                     '''''''''''''''''''''''''''''''''''''''''''''
                     If String.IsNullOrEmpty(Trial) Then
@@ -348,16 +322,15 @@ Public Class LoginForm
                     MessageBox.Show("ارتباط با سرور مورد نظر برقرار نشد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
             Catch ex As Exception
-            GetError(ex.Message & vbCrLf & vbCrLf & ex.StackTrace, "LoginForm", "BtnConnect_Click")
-            BtnConnect.Text = "اتصال"
-            BtnConnect.Image = Nothing
-            TxtAddress.Enabled = True
-            GroupBox1.Enabled = False
-            GroupBox3.Enabled = False
-            BtnOk.Enabled = False
-            MessageBox.Show("ارتباط با سرور مورد نظر برقرار نشد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-
+                GetError(ex.Message & vbCrLf & vbCrLf & ex.StackTrace, "LoginForm", "BtnConnect_Click")
+                BtnConnect.Text = "اتصال"
+                BtnConnect.Image = Nothing
+                TxtAddress.Enabled = True
+                GroupBox1.Enabled = False
+                GroupBox3.Enabled = False
+                BtnOk.Enabled = False
+                MessageBox.Show("ارتباط با سرور مورد نظر برقرار نشد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         Else
             BtnConnect.Text = "اتصال"
             BtnConnect.Image = Nothing
@@ -367,8 +340,6 @@ Public Class LoginForm
             BtnOk.Enabled = False
         End If
     End Sub
-
-    
 
     Private Function ConnectionTest(ByVal Con_Str As String) As Boolean
         Try
@@ -402,14 +373,14 @@ Public Class LoginForm
                     Return False
                 End If
             End Using
-
         Catch ex As Exception
             Return False
         End Try
     End Function
+
     Private Sub GetListAccounting()
         Try
-            Dim ConString As String = String.Format("Data Source={0};Initial Catalog=Manage_Nab;User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0", TxtAddress.Text.Trim)
+            Dim ConString As String = String.Format("Data Source={0};Initial Catalog=Manage_Nab;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0", TxtAddress.Text.Trim)
             ds.Clear()
             Dim sqlcon As New SqlConnection(ConString)
             sqlcon.Open()
@@ -428,9 +399,10 @@ Public Class LoginForm
             GetError(ex.Message & vbCrLf & vbCrLf & ex.StackTrace, "LoginForm", "GetListAccounting")
         End Try
     End Sub
+
     Private Sub GetListPeriod(ByVal Id As Long)
         Try
-            Dim ConString As String = String.Format("Data Source={0};Initial Catalog=Manage_Nab;User ID=NAB_User;Password=q1w2e3r4t5;Connection Timeout=0", TxtAddress.Text.Trim)
+            Dim ConString As String = String.Format("Data Source={0};Initial Catalog=Manage_Nab;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0", TxtAddress.Text.Trim)
             dsP.Clear()
             Dim sqlcon As New SqlConnection(ConString)
             sqlcon.Open()
@@ -463,27 +435,12 @@ Public Class LoginForm
         End Try
     End Sub
 
-    Private Sub TxtAddress_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtAddress.KeyDown
-        If e.KeyCode = Keys.Enter Then Call BtnConnect_Click(Nothing, Nothing)
-    End Sub
-
     Private Sub CmbPeriod_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CmbPeriod.KeyDown
         If e.KeyCode = Keys.Enter Then
             TxtUser.Focus()
         End If
     End Sub
 
-    Private Sub TxtUser_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtUser.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            TxtPass.Focus()
-        End If
-    End Sub
-
-    Private Sub TxtPass_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtPass.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            Call BtnOk_Click(Nothing, Nothing)
-        End If
-    End Sub
     Private Sub GetKey(ByVal e As KeyEventArgs)
         If e.KeyCode = Keys.Escape Then
             Me.Close()
@@ -523,6 +480,7 @@ Public Class LoginForm
             Return x1
         End Try
     End Function
+
     Private Sub GetTrial()
         Try
 
@@ -553,22 +511,114 @@ Public Class LoginForm
 
     Private Sub SetTitle()
         GetTrial()
+        Dim version() As String
+        version = Assembly.GetEntryAssembly().GetName().Version.ToString().Split(".")
+        Dim newVersion = version(0) & "." & version(1) & "." & version(2)
         If Trial = "" Then
-            Me.Text = " Version : 6.16.10  ورود به سيستم"
+            lblVer.Text = newVersion
         Else
-            Me.Text = String.Format("اعتبار تا : {0} Version : 6.16.10  ورود به سيستم", Trial)
+            lblVer.Text = String.Format("اعتبار تا : {0} Version : {1}", Trial, newVersion)
         End If
     End Sub
 
-    Private Sub TxtUser_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtUser.KeyPress
+    Private Sub TxtUser_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = "*" Or e.KeyChar = "?" Or e.KeyChar = "؟" Or e.KeyChar = "'" Or e.KeyChar = "|" Then
             e.Handled = True
         End If
     End Sub
 
-    Private Sub TxtPass_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtPass.KeyPress
+    Private Sub TxtPass_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = "*" Or e.KeyChar = "?" Or e.KeyChar = "؟" Or e.KeyChar = "'" Or e.KeyChar = "|" Then
             e.Handled = True
         End If
     End Sub
+
+    Private Sub BtnExit_Click(sender As Object, e As EventArgs) Handles BtnExit.Click
+        Application.Exit()
+    End Sub
+
+    Private Sub TxtAddress_TextChanged(sender As Object, e As EventArgs) Handles TxtAddress.TextChanged
+
+    End Sub
+
+    Private Sub TxtAddress_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtAddress.KeyDown
+        If e.KeyCode = Keys.Enter Then Call BtnConnect_Click(Nothing, Nothing)
+    End Sub
+
+    Private Sub BtnShowPass_Click(sender As Object, e As EventArgs) Handles BtnShowPass.Click
+        If BtnShowPass.Symbol = "f06e" Then
+            BtnShowPass.Symbol = "f070"
+            TxtPass.UseSystemPasswordChar = False
+        End If
+        If BtnShowPass.Symbol = "f070" Then
+            BtnShowPass.Symbol = "f06e"
+            TxtPass.UseSystemPasswordChar = True
+        End If
+    End Sub
+
+    Private Sub TxtPass_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtPass.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            Call BtnOk_Click(Nothing, Nothing)
+        End If
+    End Sub
+
+    Private Sub BtnOk_Click(sender As Object, e As EventArgs) Handles BtnOk.Click
+        TxtUser.Text = TxtUser.Text.Replace("*", "").Replace("?", "").Replace("؟", "").Replace("'", "").Replace("|", "")
+        TxtPass.Text = TxtPass.Text.Replace("*", "").Replace("?", "").Replace("؟", "").Replace("'", "").Replace("|", "")
+
+        If String.IsNullOrEmpty(TxtUser.Text.Trim) Then
+            MessageBox.Show("نام کاربری را وارد کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            TxtUser.Focus()
+            Exit Sub
+        End If
+
+        If String.IsNullOrEmpty(CmbAccount.Text) Or String.IsNullOrEmpty(CmbPeriod.Text) Then
+            MessageBox.Show("اطلاعات دفتر حسابداری وجود ندارد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
+        End If
+        If String.IsNullOrEmpty(CmbPeriod.Text) Then
+            MessageBox.Show("اطلاعات دوره مالی وجود ندارد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Application.Exit()
+        End If
+
+        DataSource = Me.SetDataSource(TxtAddress.Text.Trim)
+        ConectionBank.ConnectionString = DataSource
+        Me.Enabled = False
+        If AreYouLoging(TxtUser.Text.Trim, TxtPass.Text.Trim) = False Then
+            Me.Enabled = True
+            Exit Sub
+        End If
+        Me.GetPath("SAVE")
+
+        TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "ورود به سیستم", "ورود", "", "")
+
+        ' Dim Theme As Integer = PublicFunction.GetTheme()
+        Me.Enabled = True
+
+        'If Theme = 1 Then
+        Dim mfrm As New FrmMain
+        Me.Hide()
+        mfrm.Show()
+        'Else
+        '    'Todo Change This Target Page
+        '    Dim mfrm As New FrmMain
+        '    Me.Hide()
+        '    mfrm.Show()
+        'End If
+
+    End Sub
+
+    Private Sub TxtUser_KeyDown(sender As Object, e As KeyEventArgs) Handles TxtUser.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TxtPass.Focus()
+        End If
+    End Sub
+
+    Private Sub Panel1_MouseDown(sender As Object, e As MouseEventArgs) Handles Panel1.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
+        End If
+    End Sub
+
 End Class
