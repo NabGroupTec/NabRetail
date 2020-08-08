@@ -386,7 +386,7 @@ Public Class AddEdit_UTA
     End Sub
 
     Private Sub BtnDel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDel.Click
-        If MessageBox.Show("آيا براي حذف همه انبارهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آيا براي حذف همه انبارهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
         DGV.Rows.Clear()
     End Sub
 

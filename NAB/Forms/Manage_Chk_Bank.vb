@@ -157,7 +157,7 @@ Public Class Manage_Chk_Bank
                 Me.RefreshBank()
                 Exit Sub
             End If
-            If MessageBox.Show("آیا برای حذف دسته چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف دسته چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Dim nam As String = TxtBank.Text
             Me.DelChk(DGV1.Item("Cln_id", DGV1.CurrentRow.Index).Value)
             TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "تعریف دسته چک", "حذف", "حذف دسته چک بانک :" & nam & " از شماره : " & DGV1.Item("Cln_num1", DGV1.CurrentRow.Index).Value & " تا " & DGV1.Item("Cln_num2", DGV1.CurrentRow.Index).Value, "")
@@ -242,12 +242,12 @@ Public Class Manage_Chk_Bank
             End If
             If St = -1 Then
                 Dim nam As String = DGV2.Item("Cln_num", DGV2.CurrentRow.Index).Value
-                If MessageBox.Show("آیا برای تغییر وضعیت شماره چک مورد نظر به وضعیت لاشه چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای تغییر وضعیت شماره چک مورد نظر به وضعیت لاشه چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 Me.ChangeChk(DGV2.Item("Cln_num", DGV2.CurrentRow.Index).Value, DGV1.Item("Cln_id", DGV1.CurrentRow.Index).Value, -1)
                 TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "تعریف دسته چک", "تغییر وضعیت", "تغییر به لاشه :" & nam, "")
             ElseIf St = -2 Then
                 Dim nam As String = DGV2.Item("Cln_num", DGV2.CurrentRow.Index).Value
-                If MessageBox.Show("آیا برای تغییر وضعیت شماره چک مورد نظر به وضعیت استفاده نشده مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای تغییر وضعیت شماره چک مورد نظر به وضعیت استفاده نشده مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 Me.ChangeChk(DGV2.Item("Cln_num", DGV2.CurrentRow.Index).Value, DGV1.Item("Cln_id", DGV1.CurrentRow.Index).Value, -2)
                 TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "تعریف دسته چک", "تغییر وضعیت", "تغییر به استفاده نشده :" & nam, "")
             End If

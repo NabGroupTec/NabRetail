@@ -163,7 +163,7 @@ Public Class FrmPromotion
         TxtKala.Focus()
         If Tmp_Namkala <> "" Then
             If CStr(IdKala) <> CStr(TxtIdkala.Text) And DGV.RowCount > 1 Then
-                If MessageBox.Show("در صورت تغییر کالا تخفیفات انتخاب شده پاک خواهد شد آیا برای ادامه کار مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("در صورت تغییر کالا تخفیفات انتخاب شده پاک خواهد شد آیا برای ادامه کار مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 DGV.Rows.Clear()
             End If
             TxtKala.Text = Tmp_Namkala

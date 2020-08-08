@@ -239,7 +239,7 @@ Public Class FrmMessageCenter
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای حذف پیام مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف پیام مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.No Then Exit Sub
             Me.DellMessage()
             Me.RefreshBank()
         Catch ex As Exception

@@ -804,7 +804,7 @@ Public Class Manage_Get_Pay_Chk
             ''''''''''''''''''''''''''''''''''''''''''''''''
             Me.Enabled = False
             If Rdo3.Checked = True Then
-                If MessageBox.Show("آیا برای حذف چکهای تضمینی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای حذف چکهای تضمینی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 For i As Integer = 0 To ListChkArray.Length - 1
                     Me.DelCheck(ListChkArray(i).Id)
                     TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "مدیریت چک", "تغییر وضعیت", "حذف چک تضمینی" & If(RdoGet.Checked = True, " دریافتی با سریال ", " پرداختی با سریال ") & ListChkArray(i).NumChk, "")

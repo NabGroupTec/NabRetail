@@ -151,7 +151,7 @@ Public Class FrmFactor_Barcode
                         If Not (DGV1.Item("Cln_OldKol", DGV1.CurrentRow.Index).Value Is DBNull.Value Or DGV1.Item("Cln_OldJoz", DGV1.CurrentRow.Index).Value Is DBNull.Value Or DGV1.Item("Cln_OldAnbar", DGV1.CurrentRow.Index).Value Is DBNull.Value) Then
                             If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldKol", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldJoz", DGV1.CurrentRow.Index).Value), CLng(DGV1.Item("Cln_OldAnbar", DGV1.CurrentRow.Index).Value)) Then
                                 If MAnbar = True Then
-                                    If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                                    If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                                 Else
                                     MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است و قابل تغییر نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     Exit Sub
@@ -260,7 +260,7 @@ Public Class FrmFactor_Barcode
 
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldKol", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldJoz", DGV1.CurrentRow.Index).Value), CLng(DGV1.Item("Cln_OldAnbar", DGV1.CurrentRow.Index).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                                        If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است و قابل حذف شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Exit Sub
@@ -549,7 +549,7 @@ Public Class FrmFactor_Barcode
 
     Private Sub FrmFactor_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If DGV1.RowCount > 1 And LEdit.Text = "0" Then
-            If MessageBox.Show("کالاهای وارد شده ثبت نشده است آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then e.Cancel = True
+            If MessageBox.Show("کالاهای وارد شده ثبت نشده است آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then e.Cancel = True
         End If
     End Sub
 
@@ -951,21 +951,21 @@ Public Class FrmFactor_Barcode
                 ''''''''''''''''''''''''''''''
 
                 If CmbFac.Text = CmbFac.Items.Item(3) And SCost = True And AreQustionForSCost() Then
-                    If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnSCost_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
                 End If
 
                 If CmbFac.Text = CmbFac.Items.Item(3) And q = True And AreQustionForDiscount() Then
-                    If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnDiscount_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
                 End If
 
                 If CmbFac.Text = CmbFac.Items.Item(3) And dkALA = True And AreQustionForDiscountKala() Then
-                    If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnKalaDiscount_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
@@ -1125,7 +1125,7 @@ Public Class FrmFactor_Barcode
                     FrmPay.TxtFacMon.Text = Txtallmoney.Text.Trim
                     FrmPay.LMandeh.Text = 0
                     FrmPay.TxtLend.Text = CDbl(Txtallmoney.Text.Trim) - CDbl(TxtMonFac.Text.Trim)
-                    FrmPay.TxtEndMon.Text =CDbl(Txtallmoney.Text.Trim) - CDbl(TxtMonFac.Text.Trim)
+                    FrmPay.TxtEndMon.Text = CDbl(Txtallmoney.Text.Trim) - CDbl(TxtMonFac.Text.Trim)
                     FrmPay.TxtDiscountH.Text = TxtMonFac.Text.Trim
                     FrmPay.LName.Text = TxtName.Text
                     FrmPay.LIdname.Text = TxtIdPeople.Text
@@ -1227,7 +1227,7 @@ Public Class FrmFactor_Barcode
                 Tmp_String1 = TxtDate.ThisText
 
                 state = 7
-                If MessageBox.Show("آیا میخواهید پیش فاکتور مورد نظر را چاپ کنید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("آیا میخواهید پیش فاکتور مورد نظر را چاپ کنید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Factor()
                 End If
 
@@ -1503,21 +1503,21 @@ Public Class FrmFactor_Barcode
                 End If
                 ''''''''''''''''''''''''''''''
                 If CmbFac.Text = CmbFac.Items.Item(3) And SCost = True And AreQustionForSCost() Then
-                    If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnSCost_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
                 End If
 
                 If CmbFac.Text = CmbFac.Items.Item(3) And q = True And AreQustionForDiscount() Then
-                    If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnDiscount_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
                 End If
 
                 If CmbFac.Text = CmbFac.Items.Item(3) And dkALA = True And AreQustionForDiscountKala() Then
-                    If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         Call BtnKalaDiscount_Click(Nothing, Nothing)
                         DGV1.EndEdit()
                     End If
@@ -2262,7 +2262,7 @@ Public Class FrmFactor_Barcode
     Private Sub BtnCancle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancle.Click
         Try
             If LEdit.Text = "0" Then
-                If MessageBox.Show("آیا برای لغو فاکتور مورد نظر مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای لغو فاکتور مورد نظر مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 TxtName.Clear()
                 LDisc.Text = ""
                 TxtIdPeople.Clear()
@@ -2832,7 +2832,7 @@ Public Class FrmFactor_Barcode
                         If CmbFac.Text = CmbFac.Items(1) Or CmbFac.Text = CmbFac.Items(3) Or CmbFac.Text = CmbFac.Items(6) Then
                             If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                 If MAnbar = True Then
-                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                 Else
                                     MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     Return False
@@ -2845,7 +2845,7 @@ Public Class FrmFactor_Barcode
                                 If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value) - CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value) - CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -2854,7 +2854,7 @@ Public Class FrmFactor_Barcode
                                 Else
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -2862,7 +2862,7 @@ Public Class FrmFactor_Barcode
                                     End If
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -2872,7 +2872,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -2887,7 +2887,7 @@ Public Class FrmFactor_Barcode
                             If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value - CDbl(DGV1.Item("Cln_KolCount", i).Value)), CDbl(DGV1.Item("Cln_OldJoz", i).Value) - CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -2896,7 +2896,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -2911,7 +2911,7 @@ Public Class FrmFactor_Barcode
                 If CmbFac.Text = CmbFac.Items(4) Then
                     If Not (DGV1.Item("cln_type", i).Value = "کالای خدماتی" And DGV1.Item("Cln_Vahed", i).Value = "خدمات") Then
                         If Not AreYouBackKala(CLng(DGV1.Item("Cln_code", i).Value), CLng(TxtIdPeople.Text)) Then
-                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " به طرف حساب مربوطه فروخته نشده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " به طرف حساب مربوطه فروخته نشده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                         End If
                     End If
                     If ChkFrosh.Checked = True And Not String.IsNullOrEmpty(TxtIdFactor.Text) Then
@@ -2945,15 +2945,15 @@ Public Class FrmFactor_Barcode
 
                 Next
                 If count_Kala > 1 Then
-                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
                 If count_Service > 1 Then
-                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             Next
             If CmbFac.Text = CmbFac.Items(4) And ChkFrosh.Checked = True And Not String.IsNullOrEmpty(TxtIdFactor.Text) And LEdit.Text = "0" Then
                 If Not AreYouBackFac(CLng(TxtIdFactor.Text)) Then
-                    If MessageBox.Show("فاکتور برگشت مربوط به فروش مورد نظر قبلا ثبت شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("فاکتور برگشت مربوط به فروش مورد نظر قبلا ثبت شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             End If
 
@@ -3082,14 +3082,14 @@ Public Class FrmFactor_Barcode
                         Return False
                     End If
                     If (CDbl(DGV1.Item("Cln_Fe", i).Value) - (CDbl(DGV1.Item("Cln_DarsadMon", i).Value) / (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value))))) < GetCostKalaWithDiscount(CLng(DGV1.Item("Cln_code", i).Value), (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value))), (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, "KOL", "JOZ")), "", "", "True") Then
-                        If MessageBox.Show("بهای فروش کالای سطر شماره" & i + 1 & " کمتر از بهای تمام شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                        If MessageBox.Show("بهای فروش کالای سطر شماره" & i + 1 & " کمتر از بهای تمام شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                     End If
 
                     If LEdit.Text = "0" Then
                         If CmbFac.Text = CmbFac.Items(1) Or CmbFac.Text = CmbFac.Items(3) Or CmbFac.Text = CmbFac.Items(6) Then
                             If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                 If MAnbar = True Then
-                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                 Else
                                     MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     Return False
@@ -3102,7 +3102,7 @@ Public Class FrmFactor_Barcode
                                 If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value) - CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value) - CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3111,7 +3111,7 @@ Public Class FrmFactor_Barcode
                                 Else
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3119,7 +3119,7 @@ Public Class FrmFactor_Barcode
                                     End If
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3129,7 +3129,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3144,7 +3144,7 @@ Public Class FrmFactor_Barcode
                             If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value - CDbl(DGV1.Item("Cln_KolCount", i).Value)), CDbl(DGV1.Item("Cln_OldJoz", i).Value) - CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3153,7 +3153,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3185,10 +3185,10 @@ Public Class FrmFactor_Barcode
                 Next
 
                 If count_Kala > 1 Then
-                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
                 If count_Service > 1 Then
-                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             Next
             Return True
@@ -3285,10 +3285,10 @@ Public Class FrmFactor_Barcode
 
                 Next
                 If count_Kala > 1 Then
-                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
                 If count_Service > 1 Then
-                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             Next
 
@@ -3384,7 +3384,7 @@ Public Class FrmFactor_Barcode
                         If CmbFac.Text = CmbFac.Items(1) Or CmbFac.Text = CmbFac.Items(3) Or CmbFac.Text = CmbFac.Items(6) Then
                             If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                 If MAnbar = True Then
-                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                 Else
                                     MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                     Return False
@@ -3397,7 +3397,7 @@ Public Class FrmFactor_Barcode
                                 If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value) - CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value) - CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3406,7 +3406,7 @@ Public Class FrmFactor_Barcode
                                 Else
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3414,7 +3414,7 @@ Public Class FrmFactor_Barcode
                                     End If
                                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                         If MAnbar = True Then
-                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                            If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                         Else
                                             MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                             Return False
@@ -3424,7 +3424,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3439,7 +3439,7 @@ Public Class FrmFactor_Barcode
                             If CLng(DGV1.Item("Cln_OldAnbar", i).Value) = CLng(DGV1.Item("Cln_CodeAnbar", i).Value) Then
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value - CDbl(DGV1.Item("Cln_KolCount", i).Value)), CDbl(DGV1.Item("Cln_OldJoz", i).Value) - CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3448,7 +3448,7 @@ Public Class FrmFactor_Barcode
                             Else
                                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_OldKol", i).Value), CDbl(DGV1.Item("Cln_OldJoz", i).Value), CLng(DGV1.Item("Cln_OldAnbar", i).Value)) Then
                                     If MAnbar = True Then
-                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                        If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                                     Else
                                         MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار قبلی است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                         Return False
@@ -3473,7 +3473,7 @@ Public Class FrmFactor_Barcode
                     End If
                 Next
                 If count_Kala > 1 Then
-                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             Next
             Return True
@@ -5513,7 +5513,7 @@ Public Class FrmFactor_Barcode
 
                     If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldKol", DGV1.CurrentRow.Index).Value), CDbl(DGV1.Item("Cln_OldJoz", DGV1.CurrentRow.Index).Value), CLng(DGV1.Item("Cln_OldAnbar", DGV1.CurrentRow.Index).Value)) Then
                         If MAnbar = True Then
-                            If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then e.Cancel = True
+                            If MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then e.Cancel = True
                         Else
                             MessageBox.Show("کالای سطر شماره" & DGV1.CurrentRow.Index + 1 & " کمتر از موجودی انبار است و قابل حذف شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             e.Cancel = True

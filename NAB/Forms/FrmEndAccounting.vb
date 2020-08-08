@@ -225,7 +225,7 @@ Public Class FrmEndAccounting
             Exit Sub
         End If
 
-        If MessageBox.Show("آیا برای بستن دوره مالی مطمئن هستید؟", "سوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آیا برای بستن دوره مالی مطمئن هستید؟", "سوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
         TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "بستن دوره مالی", "بستن دوره مالی", "", "")
 

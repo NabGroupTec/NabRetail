@@ -1186,7 +1186,7 @@ Public Class GetMoney
     Private Sub TxtName_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TxtName.KeyPress
         If e.KeyChar = ChrW(Keys.Enter) Then Exit Sub
         If LimitListArray.Length > 0 Then
-            If MessageBox.Show("در صورت تغییر طرف حساب ارتباط با وعده های تعیین شده حذف خواهد شد آیا برای ادامه کار مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("در صورت تغییر طرف حساب ارتباط با وعده های تعیین شده حذف خواهد شد آیا برای ادامه کار مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 Array.Resize(LimitListArray, 0)
             Else
                 e.Handled = True

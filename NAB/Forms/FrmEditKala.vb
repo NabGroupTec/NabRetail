@@ -152,7 +152,7 @@ Public Class FrmEditKala
         ElseIf e.KeyCode = Keys.F4 Then
             If BtnSearch.Enabled = True Then BtnSearch_Click(Nothing, Nothing)
         ElseIf e.KeyCode = Keys.F9 Then
-            If MessageBox.Show("آیا برای اصلاح اتوماتیک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای اصلاح اتوماتیک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Me.Enabled = False
             For i As Integer = 0 To DGV.RowCount - 1
                 If String.IsNullOrEmpty(DGV.Item("Cln_Jozcount", i).Value) Then

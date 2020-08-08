@@ -461,21 +461,21 @@ Public Class Mobile_FrmFactor
             ''''''''''''''''''''''''''''''
 
             If SCost = True And AreQustionForSCost() Then
-                If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("آیا میخواهید قیمت ویژه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Call BtnSCost_Click(Nothing, Nothing)
                     DGV1.EndEdit()
                 End If
             End If
 
             If q = True And AreQustionForDiscount() Then
-                If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("آیا میخواهید تخفیف حجمی به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Call BtnDiscount_Click(Nothing, Nothing)
                     DGV1.EndEdit()
                 End If
             End If
 
             If dkALA = True And AreQustionForDiscountKala() Then
-                If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                If MessageBox.Show("آیا میخواهید جایزه به صورت اتوماتیک اختصاص داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                     Call BtnKalaDiscount_Click(Nothing, Nothing)
                     DGV1.EndEdit()
                 End If
@@ -1241,14 +1241,14 @@ Public Class Mobile_FrmFactor
                         Return False
                     End If
                     If (CDbl(DGV1.Item("Cln_Fe", i).Value) - (CDbl(DGV1.Item("Cln_DarsadMon", i).Value) / (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value))))) < GetCostKalaWithDiscount(CLng(DGV1.Item("Cln_code", i).Value), (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value))), (If(CDbl(DGV1.Item("Cln_JozCount", i).Value) <= 0, "KOL", "JOZ")), "", "", "True") Then
-                        If MessageBox.Show("بهای فروش کالای سطر شماره" & i + 1 & " کمتر از بهای تمام شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                        If MessageBox.Show("بهای فروش کالای سطر شماره" & i + 1 & " کمتر از بهای تمام شده است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                     End If
 
                     If CmbFac.Text = CmbFac.Items(0) Then
 
                         If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", i).Value), CDbl(DGV1.Item("Cln_KolCount", i).Value), CDbl(DGV1.Item("Cln_JozCount", i).Value), CLng(DGV1.Item("Cln_CodeAnbar", i).Value)) Then
                             If MAnbar = True Then
-                                If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                                If MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                             Else
                                 MessageBox.Show("کالای سطر شماره" & i + 1 & " کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 Return False
@@ -1278,10 +1278,10 @@ Public Class Mobile_FrmFactor
                 Next
 
                 If count_Kala > 1 Then
-                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
                 If count_Service > 1 Then
-                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                    If MessageBox.Show("کالای خدماتی سطر شماره" & i + 1 & " تکراری است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                 End If
             Next
             Return True

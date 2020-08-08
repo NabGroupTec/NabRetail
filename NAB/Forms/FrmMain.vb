@@ -197,7 +197,7 @@ Public Class FrmMain
         If QExit = False Then
 
             If Not AreYouServerExit() Then
-                If MessageBox.Show("آیا برای خروج از برنامه مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                If MessageBox.Show("آیا برای خروج از برنامه مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                     e.Cancel = True
                     Exit Sub
                 End If
@@ -230,10 +230,10 @@ Public Class FrmMain
 
                 Dim result As DialogResult = MessageBox.Show("آيا مي خواهيد از اطلاعات برنامه نسخه پشتيبان بگيرد؟" & vbCrLf & "محل پشتيبان: " & backPath, "سئوال", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question)
 
-                If result = Windows.Forms.DialogResult.Cancel Then
+                If result = DialogResult.Cancel Then
                     e.Cancel = True
                     Exit Sub
-                ElseIf result = Windows.Forms.DialogResult.Yes Then
+                ElseIf result = DialogResult.Yes Then
                     Try
                         Me.Enabled = False
                         If Directory.Exists(backPath) Then

@@ -159,7 +159,7 @@ Public Class FrmOneAddTime
             End If
 
             If FarsiDate1.ThisText < TxtEndDate.Text Then
-                If MessageBox.Show("تاریخ تمدید وعده قدیمی تر از تاریخ تسویه است آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("تاریخ تمدید وعده قدیمی تر از تاریخ تسویه است آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             End If
 
             TxtIdFactor2.Text = TxtIdFactor.Text

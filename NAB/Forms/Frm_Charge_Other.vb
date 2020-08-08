@@ -295,7 +295,7 @@ Public Class Frm_Charge_Other
                     If DGV2.Item("Cln_BoxId", i).Value = DGV2.Item("Cln_BoxId", j).Value Then count += 1
                 Next
                 If count > 1 Then
-                    If MessageBox.Show("نام هزینه در ردیف شماره " & "{" & i + 1 & "}" & "  تکراری است آیا برای ادامه مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                    If MessageBox.Show("نام هزینه در ردیف شماره " & "{" & i + 1 & "}" & "  تکراری است آیا برای ادامه مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 End If
                 Array.Resize(ChargeListArray, ChargeListArray.Length + 1)
                 ChargeListArray(ChargeListArray.Length - 1).IdCharge = CLng(DGV2.Item("Cln_BoxId", i).Value)

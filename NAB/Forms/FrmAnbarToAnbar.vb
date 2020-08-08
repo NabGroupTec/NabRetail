@@ -66,7 +66,7 @@ Public Class FrmAnbarToAnbar
                 LimitMojody()
                 If Not AreYouNativeKalaAnbar(CLng(DGV.Item("Cln_code", DGV.CurrentRow.Index).Value), CDbl(DGV.Item("Cln_Kol", DGV.CurrentRow.Index).Value), CDbl(DGV.Item("Cln_Joz", DGV.CurrentRow.Index).Value), CLng(DGV.Item("Cln_CodeAnbar", DGV.CurrentRow.Index).Value)) Then
                     If MAnbar = True Then
-                        If MessageBox.Show("کالای سطر شماره" & DGV.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                        If MessageBox.Show("کالای سطر شماره" & DGV.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                     Else
                         MessageBox.Show("کالای سطر شماره" & DGV.CurrentRow.Index + 1 & " کمتر از موجودی انبار است و قابل حذف شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub

@@ -458,7 +458,7 @@ Public Class RelationVisitorFrosh
     End Sub
 
     Private Sub BtnDel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDel.Click
-        If MessageBox.Show("آيا براي حذف همه کالاهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آيا براي حذف همه کالاهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
         Me.EmptyGridKala()
         Me.EmptyGridKala2()
     End Sub
@@ -1150,7 +1150,7 @@ Public Class RelationVisitorFrosh
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        If MessageBox.Show("آيا براي حذف همه درصدهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آيا براي حذف همه درصدهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
         Me.EmptyGridKala3()
     End Sub
 End Class

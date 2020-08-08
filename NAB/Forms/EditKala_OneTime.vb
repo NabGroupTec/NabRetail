@@ -68,7 +68,7 @@ Public Class EditKala_OneTime
             If CLng(LIdAnbar.Text) = CLng(DGV1.Item("Cln_CodeAnbar", 0).Value) And CLng(LIdkala.Text) = CLng(DGV1.Item("Cln_code", 0).Value) Then
                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", 0).Value), CDbl(DGV1.Item("Cln_Count", 0).Value) - CDbl(LKol.Text), CDbl(DGV1.Item("Cln_b", 0).Value) - CDbl(LJoz.Text), CLng(DGV1.Item("Cln_CodeAnbar", 0).Value)) Then
                     If MAnbar = True Then
-                        If MessageBox.Show("کالا کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                        If MessageBox.Show("کالا کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                     Else
                         MessageBox.Show("کالا کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub
@@ -77,7 +77,7 @@ Public Class EditKala_OneTime
             Else
                 If Not AreYouNativeKalaAnbar(CLng(LIdkala.Text), CDbl(LKol.Text), CDbl(LJoz.Text), CLng(LIdAnbar.Text)) Then
                     If MAnbar = True Then
-                        If MessageBox.Show("کالای قبلی کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                        If MessageBox.Show("کالای قبلی کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                     Else
                         MessageBox.Show("کالای قبلی کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub
@@ -85,7 +85,7 @@ Public Class EditKala_OneTime
                 End If
                 If Not AreYouNativeKalaAnbar(CLng(DGV1.Item("Cln_code", 0).Value), CDbl(DGV1.Item("Cln_Count", 0).Value), CDbl(DGV1.Item("Cln_b", 0).Value), CLng(DGV1.Item("Cln_CodeAnbar", 0).Value)) Then
                     If MAnbar = True Then
-                        If MessageBox.Show("کالای جدید کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                        If MessageBox.Show("کالای جدید کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                     Else
                         MessageBox.Show("کالای جدید کمتر از موجودی انبار است و قابل ذخیره شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub

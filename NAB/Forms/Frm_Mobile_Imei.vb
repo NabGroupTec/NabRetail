@@ -46,7 +46,7 @@ Public Class Frm_Mobile_Imei
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا می خواهید این دستگاه حذف گردد؟", "سوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا می خواهید این دستگاه حذف گردد؟", "سوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.No Then Exit Sub
             If ConectionBank.State <> ConnectionState.Open Then ConectionBank.Open()
             Using cmd As New SqlCommand("Delete From  Mobile_Setting  where s1=@S1", ConectionBank)
                 cmd.Parameters.AddWithValue("@S1", SqlDbType.NVarChar).Value = DataGridView1.Item("Cln_S1", DataGridView1.CurrentRow.Index).Value

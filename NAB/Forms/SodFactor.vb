@@ -683,7 +683,7 @@ Public Class SodFactor
                 ListDelayPrintArray(ListDelayPrintArray.Length - 1).TimeRemain = CDbl(DGV1.Item("cln_Sod", i).Value)
             Next
             Me.Enabled = False
-            If MessageBox.Show("آیا سود فاکتور در چاپ تاثیر داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            If MessageBox.Show("آیا سود فاکتور در چاپ تاثیر داده شود؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                 FrmPrint.CHoose = "SODPRINT1"
             Else
                 FrmPrint.CHoose = "SODPRINT2"

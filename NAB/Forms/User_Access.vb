@@ -1893,7 +1893,7 @@ Public Class User_Access
             End If
 
             If path.Contains(TV.PathSeparator) Then path = path.Substring(0, path.IndexOf(TV.PathSeparator))
-            If MessageBox.Show("آیا برای حذف حق دسترسی مربوط به " & " { " & path & " } " & " مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف حق دسترسی مربوط به " & " { " & path & " } " & " مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             Me.Enabled = False
 
@@ -1969,7 +1969,7 @@ Public Class User_Access
             End Using
 
             Me.GetAccess()
-            
+
             Me.Enabled = True
         Catch ex As Exception
             GetError(ex.Message & vbCrLf & vbCrLf & ex.StackTrace, "User_Access", "Button2_Click")
@@ -1998,7 +1998,7 @@ Public Class User_Access
 
     Private Sub EditAccess()
         Try
-            If MessageBox.Show("آیا برای تغییر حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای تغییر حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Me.Enabled = False
             Dim key As New System.Security.Cryptography.DESCryptoServiceProvider
             Dim Sec As New Security()

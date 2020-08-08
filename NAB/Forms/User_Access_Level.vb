@@ -94,7 +94,7 @@ Public Class User_Access_Level
     End Sub
     Private Sub SaveAccess()
         Try
-            If MessageBox.Show("آیا برای ثبت حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای ثبت حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Me.Enabled = False
             Dim key As New System.Security.Cryptography.DESCryptoServiceProvider
             Dim Sec As New Security()
@@ -275,7 +275,7 @@ Public Class User_Access_Level
 
     Private Sub EditAccess()
         Try
-            If MessageBox.Show("آیا برای تغییر حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای تغییر حق دسترسی مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Me.Enabled = False
             Dim key As New System.Security.Cryptography.DESCryptoServiceProvider
             Dim Sec As New Security()
