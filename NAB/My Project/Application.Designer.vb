@@ -11,7 +11,6 @@
 Option Strict On
 Option Explicit On
 
-Imports NAB.Forms
 
 Namespace My
     
@@ -33,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm =HomePage
+            Me.MainForm = Global.NAB.SplashScreen1
         End Sub
     End Class
 End Namespace
