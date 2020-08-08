@@ -421,13 +421,13 @@ Public Class LoginForm
         End Try
     End Sub
 
-    Private Sub CmbAccount_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CmbAccount.KeyDown
+    Private Sub CmbAccount_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) 
         If e.KeyCode = Keys.Enter Then
             CmbPeriod.Focus()
         End If
     End Sub
 
-    Private Sub CmbAccount_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CmbAccount.SelectedIndexChanged
+    Private Sub CmbAccount_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) 
         Try
             Me.GetListPeriod(CmbAccount.SelectedValue)
         Catch ex As Exception
@@ -435,7 +435,7 @@ Public Class LoginForm
         End Try
     End Sub
 
-    Private Sub CmbPeriod_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles CmbPeriod.KeyDown
+    Private Sub CmbPeriod_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) 
         If e.KeyCode = Keys.Enter Then
             TxtUser.Focus()
         End If

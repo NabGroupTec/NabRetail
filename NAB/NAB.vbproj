@@ -131,23 +131,29 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Release\Ionic.Zip.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Data.v3">
-      <HintPath>bin\Release\Janus.Data.v3.dll</HintPath>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Data.v3.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Windows.ButtonBar.v3">
-      <HintPath>bin\Release\Janus.Windows.ButtonBar.v3.dll</HintPath>
+    <Reference Include="Janus.Windows.ButtonBar.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Windows.ButtonBar.v3.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Windows.Common.v3">
-      <HintPath>bin\Release\Janus.Windows.Common.v3.dll</HintPath>
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Windows.Common.v3.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Windows.GridEX.v3">
-      <HintPath>bin\Release\Janus.Windows.GridEX.v3.dll</HintPath>
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Windows.GridEX.v3.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Windows.Ribbon.v3">
-      <HintPath>bin\Release\Janus.Windows.Ribbon.v3.dll</HintPath>
+    <Reference Include="Janus.Windows.Ribbon.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Windows.Ribbon.v3.dll</HintPath>
     </Reference>
-    <Reference Include="Janus.Windows.UI.v3">
-      <HintPath>bin\Release\Janus.Windows.UI.v3.dll</HintPath>
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Janus.Windows.UI.v3.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.UI.Winforms.Controls, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -290,12 +296,6 @@
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmProductionFormulas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HomePage.Designer.vb">
-      <DependentUpon>HomePage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HomePage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module Functions\ApplicationEvents.vb" />
@@ -3673,9 +3673,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProductionFormulas.resx">
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomePage.resx">
-      <DependentUpon>HomePage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
