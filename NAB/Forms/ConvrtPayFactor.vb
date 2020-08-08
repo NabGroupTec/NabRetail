@@ -675,7 +675,7 @@ Public Class ConvrtPayFactor
                 If res <> 0.5 Then
                     If res <= 0 Then
                         If LimitNoSell = False Then
-                            If MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                            If MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                         Else
                             MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                             Exit Sub
@@ -683,7 +683,7 @@ Public Class ConvrtPayFactor
                     Else
                         If CDbl(TxtLend.Text) > res Then
                             If LimitNoSell = False Then
-                                If MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                                If MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                             Else
                                 MessageBox.Show("طرف حساب مربوطه فاقد اعتبار لازم جهت پرداخت نسیه می باشد", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                                 Exit Sub

@@ -80,7 +80,7 @@ Public Class RepairSanad
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای بازسازی اسناد مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای بازسازی اسناد مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
 
             Tmp_Mon = 0
@@ -237,7 +237,7 @@ Public Class RepairSanad
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای حذف مغایرت ها مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف مغایرت ها مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             Me.Enabled = False
 
@@ -315,7 +315,7 @@ Public Class RepairSanad
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای اصلاح مغایرت ها مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای اصلاح مغایرت ها مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             Tmp_Mon = 0
             Dim key As New System.Security.Cryptography.DESCryptoServiceProvider

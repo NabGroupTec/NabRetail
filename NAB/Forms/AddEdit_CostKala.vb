@@ -299,7 +299,7 @@ Public Class AddEdit_CostKala
 
     Private Sub AddEdit_CostKala_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If DGV.RowCount > 1 And ext = False Then
-            If MessageBox.Show("آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then e.Cancel = True
+            If MessageBox.Show("آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then e.Cancel = True
         End If
     End Sub
 
@@ -521,7 +521,7 @@ Public Class AddEdit_CostKala
             e.Graphics.DrawString("رديف", DGV.DefaultCellStyle.Font, b, DGV.Size.Width - 40, 6)
             e.Graphics.DrawString(e.RowIndex + 1, DGV.DefaultCellStyle.Font, b, e.RowBounds.Location.X + DGV.Size.Width - 40, e.RowBounds.Location.Y)
         End Using
-        
+
         Try
             If DGV.Item("cln_Name", e.RowIndex).Value <> "" Then
                 If DGV.Item("cln_Cost", e.RowIndex).Value Is DBNull.Value Then
@@ -659,7 +659,7 @@ Public Class AddEdit_CostKala
     End Sub
 
     Private Sub BtnDel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnDel.Click
-        If MessageBox.Show("آيا براي حذف همه کالاهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آيا براي حذف همه کالاهای موجود مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
         DGV.Rows.Clear()
     End Sub
 

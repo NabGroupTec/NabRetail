@@ -801,7 +801,7 @@ Public Class ManageFactor
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای حذف فاکتور مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف فاکتور مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             If Not AreYouEditFactor(DGV1.Item("Cln_Idf", DGV1.CurrentRow.Index).Value, GetStateFactor(DGV1.Item("Cln_TypeFac", DGV1.CurrentRow.Index).Value)) Then
                 MessageBox.Show("فاکتور مورد نظر در حال بروز رسانی می باشد لطفا بعدا اقدام کنید", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Exit Sub
@@ -865,7 +865,7 @@ Public Class ManageFactor
             For i As Integer = 0 To dt.Rows.Count - 1
                 If Not AreYouNativeKalaAnbar(dt.Rows(i).Item("IdKala"), dt.Rows(i).Item("KolCount"), dt.Rows(i).Item("JozCount"), dt.Rows(i).Item("IdAnbar")) Then
                     If MAnbar = True Then
-                        If MessageBox.Show("کالا با کد " & dt.Rows(i).Item("IdKala") & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Return False
+                        If MessageBox.Show("کالا با کد " & dt.Rows(i).Item("IdKala") & " کمتر از موجودی انبار است آیا برای ادامه مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Return False
                     Else
                         MessageBox.Show("کالا با کد " & dt.Rows(i).Item("IdKala") & " کمتر از موجودی انبار است و قابل " & If(Type = 7, "تبدیل", "حذف") & " شدن نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Return False

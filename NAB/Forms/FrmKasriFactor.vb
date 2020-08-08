@@ -138,7 +138,7 @@ Public Class FrmKasriFactor
         If IdKala <> 0 Then
             If TxtIDFac.Text <> CStr(IdKala) Then
                 If DGV1.RowCount - 1 > 0 Then
-                    If MessageBox.Show("در صورت تغییر شماره فاکتور کالاهای تعیین شده حذف خواهد شد آیا برای ادامه کار مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                    If MessageBox.Show("در صورت تغییر شماره فاکتور کالاهای تعیین شده حذف خواهد شد آیا برای ادامه کار مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
                         EmptyGridKala()
                     Else
                         e.Handled = True

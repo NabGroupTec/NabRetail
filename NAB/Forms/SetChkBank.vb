@@ -91,14 +91,14 @@ Public Class SetChkBank
             '///////////////////////////////////////////////////////////////
             If CLng(Ledit.Text) = 0 Then
                 If Not Me.AreYouAdd(CDbl(Txtmon1.Text), CDbl(Txtmon2.Text), CLng(LID.Text)) Then Exit Sub
-                If MessageBox.Show("آیا برای ذخیره دسته چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای ذخیره دسته چک مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 If SaveChk(CLng(LID.Text)) Then
                     TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "تعریف دسته چک", "جدید", "بانک :" & LName.Text & " از شماره: " & Txtmon1.Text & " تا " & Txtmon2.Text, "")
                     Me.Close()
                 End If
             ElseIf CLng(Ledit.Text) <> 0 Then
                 If Not Me.AreYouEdit(CDbl(Txtmon1.Text), CDbl(Txtmon2.Text), CLng(LID.Text), CLng(Ledit.Text)) Then Exit Sub
-                If MessageBox.Show("آیا برای ذخیره تغییرات مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("آیا برای ذخیره تغییرات مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 If EditChk(CLng(Ledit.Text)) Then
                     TraceUser(Id_User, GetDate(), CStr(Date.Now.ToLongTimeString), "تعریف دسته چک", "ویرایش", "بانک :" & LName.Text & " از شماره: " & Txtmon1.Text & " تا " & Txtmon2.Text, "")
                     Me.Close()

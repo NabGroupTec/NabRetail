@@ -564,7 +564,7 @@ Public Class Mobile_ManageFactor
             'End If
 
             If Not Me.AreYouDeleteMobileFac(DGV1.Item("Cln_Idf", DGV1.CurrentRow.Index).Value) Then Exit Sub
-            If MessageBox.Show("آیا برای حذف فاکتور مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف فاکتور مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             Me.DeleteMobileFac(DGV1.Item("Cln_Idf", DGV1.CurrentRow.Index).Value)
             Call BtnShow_Click(Nothing, Nothing)
         Catch ex As Exception

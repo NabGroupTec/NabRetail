@@ -2231,7 +2231,7 @@ Public Class FrmGetPay
                 End If
             End If
 
-            If MessageBox.Show("آیا برای حذف سند مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف سند مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             ''''''''''''''
             If CmbSanad.Text = CmbSanad.Items(2) Then
                 Me.Enabled = False

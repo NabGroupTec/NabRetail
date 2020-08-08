@@ -29,7 +29,7 @@ Public Class FrmBackGround
                     Pic.Image = Image.FromFile(OpenF.FileName)
                     Dim f As New System.IO.FileInfo(OpenF.FileName)
                     If f.Length > 300000 Then
-                        If MessageBox.Show("تصویر انتخابی شما میتواند باعث سنگین شدن نسخه پشتیبان و اطلاعات شود آیا برای ادامه کار مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then
+                        If MessageBox.Show("تصویر انتخابی شما میتواند باعث سنگین شدن نسخه پشتیبان و اطلاعات شود آیا برای ادامه کار مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then
                             Pic.Image = Nothing
                             Exit Sub
                         End If

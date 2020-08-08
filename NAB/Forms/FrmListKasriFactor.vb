@@ -94,7 +94,7 @@ Public Class FrmListKasriFactor
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای حذف کسری فاکتور مورد نظر مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف کسری فاکتور مورد نظر مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             Me.DelKasriFactor(DGV1.Item("Cln_IdFactor", DGV1.CurrentRow.Index).Value)
             Me.GetKasriList()

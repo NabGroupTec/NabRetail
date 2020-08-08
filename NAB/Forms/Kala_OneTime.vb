@@ -16,7 +16,7 @@ Public Class Kala_OneTime
 
     Private Sub Kala_OneTime_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If DGV1.RowCount > 1 Then
-            If MessageBox.Show("کالاهای وارد شده در بخش ثبت موجودی اول دوره ذخیره نشده است آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then e.Cancel = True
+            If MessageBox.Show("کالاهای وارد شده در بخش ثبت موجودی اول دوره ذخیره نشده است آیا برای خروج مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then e.Cancel = True
         End If
     End Sub
 
@@ -109,7 +109,7 @@ Public Class Kala_OneTime
     End Sub
 
     Private Sub Btnnew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnnew.Click
-        If MessageBox.Show("آيا براي حذف همه کالاهای مورد نظر مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+        If MessageBox.Show("آيا براي حذف همه کالاهای مورد نظر مطمئن هستيد؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
         Try
             Me.EmptyGridKala()
             Txtallmoney.Text = "0"
@@ -186,7 +186,7 @@ Public Class Kala_OneTime
                         MessageBox.Show(" کالای سطر شماره" & "{ " & i + 1 & " }" & "  نامشخص است لطفا آن را اصلاح كنيد ", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub
                     End If
-                   
+
                     If Trim(DGV1.Item("Cln_CodeAnbar", i).Value) = "" Then
                         MessageBox.Show(" انبار سطر شماره" & "{ " & i + 1 & " }" & "  نامشخص است لطفا آن را اصلاح كنيد ", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Exit Sub
@@ -301,7 +301,7 @@ Public Class Kala_OneTime
                 Me.RefreshBank()
                 Exit Sub
             End If
-            If MessageBox.Show("آیا برای عملیات حذف کالا مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای عملیات حذف کالا مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             LimitMojody()
 
@@ -311,7 +311,7 @@ Public Class Kala_OneTime
 
             If Not AreYouNativeKalaAnbar(CLng(DGV2.Item("Cln_Id", DGV2.CurrentRow.Index).Value), CDbl(DGV2.Item("Cln_CountKol", DGV2.CurrentRow.Index).Value), CDbl(DGV2.Item("Cln_CountJoz", DGV2.CurrentRow.Index).Value), CLng(DGV2.Item("Cln_idanbar1", DGV2.CurrentRow.Index).Value)) Then
                 If MAnbar = True Then
-                    If MessageBox.Show("کالای سطر شماره" & DGV2.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای حذف مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                    If MessageBox.Show("کالای سطر شماره" & DGV2.CurrentRow.Index + 1 & " کمتر از موجودی انبار است آیا برای حذف مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
                 Else
                     MessageBox.Show("کالای سطر شماره" & DGV2.CurrentRow.Index + 1 & " کمتر از موجودی انبار است و قابل حذف نیست", "هشدار", MessageBoxButtons.OK, MessageBoxIcon.Information)
                     Exit Sub

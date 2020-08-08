@@ -5849,7 +5849,7 @@ Public Class FrmPrint
         Try
             Dim thisObj As Object
             Dim MyPageView As CrystalDecisions.Windows.Forms.PageView
-            Dim tcontrol As Windows.Forms.TabControl
+            Dim tcontrol As TabControl
             For Each thisObj In CRV.Controls
                 Select Case UCase(thisObj.GetType.Name)
                     Case "PAGEVIEW"

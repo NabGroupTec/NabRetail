@@ -89,7 +89,7 @@ Public Class FrmMeldProductionList
             End If
             Dim dr As New DialogResult
             dr = MessageBox.Show("آیا مایل به حذف این فرمول می باشید", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-            If (dr = Windows.Forms.DialogResult.Yes) Then
+            If (dr = DialogResult.Yes) Then
                 Dim CmdDelete As New SqlCommand("delete from MeldProduction where MeldProduction.Id=" & dgvFormulas.Item("Cln_Id", dgvFormulas.CurrentRow.Index).Value.ToString() & "", ConectionBank)
                 If (ConectionBank.State <> ConnectionState.Open) Then ConectionBank.Open()
                 CmdDelete.ExecuteNonQuery()

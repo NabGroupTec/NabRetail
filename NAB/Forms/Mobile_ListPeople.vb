@@ -154,7 +154,7 @@ Public Class Mobile_ListPeople
                 Exit Sub
             End If
 
-            If MessageBox.Show("آیا برای حذف طرف حساب مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+            If MessageBox.Show("آیا برای حذف طرف حساب مورد نظر مطمئن هستید؟", "سئوال", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
 
             If ConectionBank.State <> ConnectionState.Open Then ConectionBank.Open()
 

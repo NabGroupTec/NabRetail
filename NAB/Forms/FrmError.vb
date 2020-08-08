@@ -36,7 +36,7 @@ Public Class FrmError
         Try
             SF.FileName = "Err_" & GetDate().Replace("/", "-") & "  " & Date.Now.ToLongTimeString.Replace(":", "-")
 
-            If SF.ShowDialog = Windows.Forms.DialogResult.OK Then
+            If SF.ShowDialog = DialogResult.OK Then
                 sw = New StreamWriter(SF.FileName, False, System.Text.Encoding.UTF8, 1)
                 sw.Write(TxtError.Text)
                 sw.Close()

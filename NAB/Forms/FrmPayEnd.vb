@@ -167,7 +167,7 @@ Public Class FrmPayEnd
             End If
 
             If CDbl(TxtMon.Text) > CDbl(TxtBedfactor.Text) Then
-                If MessageBox.Show("مبلغ پرداختی بیشتر از بدهی فاکتور است آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.No Then Exit Sub
+                If MessageBox.Show("مبلغ پرداختی بیشتر از بدهی فاکتور است آیا برای ادامه عملیات مطمئن هستید؟", "هشدار", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.No Then Exit Sub
             End If
 
             TxtIdFactor2.Text = TxtIdFactor.Text
