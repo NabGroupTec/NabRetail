@@ -67,16 +67,16 @@ Partial Class FrmMeldProduction
         Me.LIdFac = New System.Windows.Forms.Label()
         Me.LState = New System.Windows.Forms.Label()
         Me.BtnCancel = New System.Windows.Forms.Button()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.StatusStrip1.SuspendLayout()
-        Me.SuspendLayout()
+        Me.GroupBox2.SuspendLayout
+        Me.GroupBox3.SuspendLayout
+        CType(Me.DGV1,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.StatusStrip1.SuspendLayout
+        Me.SuspendLayout
         '
         'GroupBox2
         '
-        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.TxtDate)
@@ -89,13 +89,13 @@ Partial Class FrmMeldProduction
         Me.GroupBox2.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.GroupBox2.Size = New System.Drawing.Size(885, 67)
         Me.GroupBox2.TabIndex = 0
-        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.TabStop = false
         Me.GroupBox2.Text = "مشخصات فرمول"
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = true
         Me.Label2.Location = New System.Drawing.Point(846, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 21)
@@ -104,8 +104,8 @@ Partial Class FrmMeldProduction
         '
         'Label5
         '
-        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label5.AutoSize = True
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = true
         Me.Label5.Location = New System.Drawing.Point(478, 25)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(56, 21)
@@ -114,8 +114,8 @@ Partial Class FrmMeldProduction
         '
         'TxtDate
         '
-        Me.TxtDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TxtDate.Font = New System.Drawing.Font("B Traffic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
+        Me.TxtDate.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.TxtDate.Font = New System.Drawing.Font("B Traffic", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.TxtDate.Location = New System.Drawing.Point(740, 22)
         Me.TxtDate.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtDate.Name = "TxtDate"
@@ -126,31 +126,31 @@ Partial Class FrmMeldProduction
         '
         'TxtDisc
         '
-        Me.TxtDisc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtDisc.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TxtDisc.BackColor = System.Drawing.SystemColors.Window
         Me.TxtDisc.Location = New System.Drawing.Point(6, 22)
         Me.TxtDisc.MaxLength = 200
         Me.TxtDisc.Name = "TxtDisc"
-        Me.TxtDisc.ShortcutsEnabled = False
+        Me.TxtDisc.ShortcutsEnabled = false
         Me.TxtDisc.Size = New System.Drawing.Size(466, 29)
         Me.TxtDisc.TabIndex = 3
         '
         'TxtSanad
         '
-        Me.TxtSanad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtSanad.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TxtSanad.BackColor = System.Drawing.SystemColors.Window
         Me.TxtSanad.Location = New System.Drawing.Point(552, 22)
         Me.TxtSanad.MaxLength = 20
         Me.TxtSanad.Name = "TxtSanad"
-        Me.TxtSanad.ShortcutsEnabled = False
+        Me.TxtSanad.ShortcutsEnabled = false
         Me.TxtSanad.Size = New System.Drawing.Size(93, 29)
         Me.TxtSanad.TabIndex = 2
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Label4.AutoSize = True
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.Label4.AutoSize = true
         Me.Label4.Location = New System.Drawing.Point(648, 26)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 21)
@@ -159,25 +159,25 @@ Partial Class FrmMeldProduction
         '
         'TxtId
         '
-        Me.TxtId.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TxtId.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.TxtId.BackColor = System.Drawing.SystemColors.Window
         Me.TxtId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtId.Location = New System.Drawing.Point(563, 22)
         Me.TxtId.MaxLength = 20
         Me.TxtId.Name = "TxtId"
-        Me.TxtId.ReadOnly = True
-        Me.TxtId.ShortcutsEnabled = False
+        Me.TxtId.ReadOnly = true
+        Me.TxtId.ShortcutsEnabled = false
         Me.TxtId.Size = New System.Drawing.Size(33, 29)
         Me.TxtId.TabIndex = 58
-        Me.TxtId.TabStop = False
+        Me.TxtId.TabStop = false
         '
         'GroupBox3
         '
-        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox3.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.GroupBox3.Controls.Add(Me.DGV1)
-        Me.GroupBox3.Font = New System.Drawing.Font("B Traffic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("B Traffic", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(12, 78)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
         Me.GroupBox3.Name = "GroupBox3"
@@ -185,20 +185,20 @@ Partial Class FrmMeldProduction
         Me.GroupBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.GroupBox3.Size = New System.Drawing.Size(885, 374)
         Me.GroupBox3.TabIndex = 4
-        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.TabStop = false
         Me.GroupBox3.Text = "مشخصات کالا"
         '
         'DGV1
         '
-        Me.DGV1.AllowUserToAddRows = False
-        Me.DGV1.AllowUserToDeleteRows = False
-        Me.DGV1.AllowUserToResizeRows = False
-        Me.DGV1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DGV1.AllowUserToAddRows = false
+        Me.DGV1.AllowUserToDeleteRows = false
+        Me.DGV1.AllowUserToResizeRows = false
+        Me.DGV1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("B Traffic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("B Traffic", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
         DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
@@ -208,7 +208,7 @@ Partial Class FrmMeldProduction
         Me.DGV1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.cln_type, Me.cln_name, Me.Cln_KolCount, Me.Cln_JozCount, Me.Cln_Vahed, Me.Cln_Fe, Me.Cln_Darsad, Me.Cln_Anbar, Me.Cln_Use, Me.Cln_Disc, Me.Cln_Code, Me.Cln_CodeAnbar, Me.Cln_DK, Me.Cln_KOL, Me.Cln_JOZ})
         Me.DGV1.Location = New System.Drawing.Point(10, 22)
         Me.DGV1.Margin = New System.Windows.Forms.Padding(3, 5, 3, 5)
-        Me.DGV1.MultiSelect = False
+        Me.DGV1.MultiSelect = false
         Me.DGV1.Name = "DGV1"
         Me.DGV1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.DGV1.Size = New System.Drawing.Size(869, 342)
@@ -313,7 +313,7 @@ Partial Class FrmMeldProduction
         Me.Cln_Disc.MaxInputLength = 200
         Me.Cln_Disc.Name = "Cln_Disc"
         Me.Cln_Disc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cln_Disc.Visible = False
+        Me.Cln_Disc.Visible = false
         Me.Cln_Disc.Width = 130
         '
         'Cln_Code
@@ -324,21 +324,21 @@ Partial Class FrmMeldProduction
         Me.Cln_Code.HeaderText = "کد کالا"
         Me.Cln_Code.Name = "Cln_Code"
         Me.Cln_Code.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cln_Code.Visible = False
+        Me.Cln_Code.Visible = false
         '
         'Cln_CodeAnbar
         '
         Me.Cln_CodeAnbar.HeaderText = "کد انبار"
         Me.Cln_CodeAnbar.Name = "Cln_CodeAnbar"
         Me.Cln_CodeAnbar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cln_CodeAnbar.Visible = False
+        Me.Cln_CodeAnbar.Visible = false
         '
         'Cln_DK
         '
         Me.Cln_DK.HeaderText = "دو واحده"
         Me.Cln_DK.Name = "Cln_DK"
         Me.Cln_DK.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Cln_DK.Visible = False
+        Me.Cln_DK.Visible = false
         '
         'Cln_KOL
         '
@@ -346,42 +346,42 @@ Partial Class FrmMeldProduction
         Me.Cln_KOL.Name = "Cln_KOL"
         Me.Cln_KOL.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Cln_KOL.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cln_KOL.Visible = False
+        Me.Cln_KOL.Visible = false
         '
         'Cln_JOZ
         '
         Me.Cln_JOZ.HeaderText = "جزء"
         Me.Cln_JOZ.Name = "Cln_JOZ"
         Me.Cln_JOZ.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.Cln_JOZ.Visible = False
+        Me.Cln_JOZ.Visible = false
         '
         'BtnSave
         '
-        Me.BtnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.BtnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BtnSave.Location = New System.Drawing.Point(798, 460)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(99, 30)
         Me.BtnSave.TabIndex = 6
         Me.BtnSave.Text = "ثبت"
-        Me.BtnSave.UseVisualStyleBackColor = True
+        Me.BtnSave.UseVisualStyleBackColor = true
         '
         'StatusStrip1
         '
         Me.StatusStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.StatusStrip1.Font = New System.Drawing.Font("B Traffic", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
+        Me.StatusStrip1.Font = New System.Drawing.Font("B Traffic", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2, Me.ToolStripStatusLabel7, Me.ToolStripStatusLabel8})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 495)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
         Me.StatusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.StatusStrip1.Size = New System.Drawing.Size(909, 29)
-        Me.StatusStrip1.SizingGrip = False
+        Me.StatusStrip1.SizingGrip = false
         Me.StatusStrip1.TabIndex = 52
         '
         'ToolStripStatusLabel1
         '
-        Me.ToolStripStatusLabel1.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabel1.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right),System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(54, 24)
@@ -389,7 +389,7 @@ Partial Class FrmMeldProduction
         '
         'ToolStripStatusLabel2
         '
-        Me.ToolStripStatusLabel2.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabel2.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right),System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.ToolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedInner
         Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
         Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(45, 24)
@@ -397,7 +397,7 @@ Partial Class FrmMeldProduction
         '
         'ToolStripStatusLabel7
         '
-        Me.ToolStripStatusLabel7.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabel7.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right),System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.ToolStripStatusLabel7.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedInner
         Me.ToolStripStatusLabel7.Name = "ToolStripStatusLabel7"
         Me.ToolStripStatusLabel7.Size = New System.Drawing.Size(78, 24)
@@ -405,7 +405,7 @@ Partial Class FrmMeldProduction
         '
         'ToolStripStatusLabel8
         '
-        Me.ToolStripStatusLabel8.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right), System.Windows.Forms.ToolStripStatusLabelBorderSides)
+        Me.ToolStripStatusLabel8.BorderSides = CType((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left Or System.Windows.Forms.ToolStripStatusLabelBorderSides.Right),System.Windows.Forms.ToolStripStatusLabelBorderSides)
         Me.ToolStripStatusLabel8.BorderStyle = System.Windows.Forms.Border3DStyle.RaisedInner
         Me.ToolStripStatusLabel8.Name = "ToolStripStatusLabel8"
         Me.ToolStripStatusLabel8.Size = New System.Drawing.Size(64, 24)
@@ -413,48 +413,48 @@ Partial Class FrmMeldProduction
         '
         'LEdit
         '
-        Me.LEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LEdit.AutoSize = True
+        Me.LEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.LEdit.AutoSize = true
         Me.LEdit.Location = New System.Drawing.Point(902, 96)
         Me.LEdit.Name = "LEdit"
         Me.LEdit.Size = New System.Drawing.Size(0, 21)
         Me.LEdit.TabIndex = 52
-        Me.LEdit.Visible = False
+        Me.LEdit.Visible = false
         '
         'LIdFac
         '
-        Me.LIdFac.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LIdFac.AutoSize = True
+        Me.LIdFac.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.LIdFac.AutoSize = true
         Me.LIdFac.Location = New System.Drawing.Point(917, 96)
         Me.LIdFac.Name = "LIdFac"
         Me.LIdFac.Size = New System.Drawing.Size(0, 21)
         Me.LIdFac.TabIndex = 52
-        Me.LIdFac.Visible = False
+        Me.LIdFac.Visible = false
         '
         'LState
         '
-        Me.LState.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LState.AutoSize = True
+        Me.LState.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.LState.AutoSize = true
         Me.LState.Location = New System.Drawing.Point(914, 96)
         Me.LState.Name = "LState"
         Me.LState.Size = New System.Drawing.Size(0, 21)
         Me.LState.TabIndex = 52
-        Me.LState.Visible = False
+        Me.LState.Visible = false
         '
         'BtnCancel
         '
-        Me.BtnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
         Me.BtnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCancel.Location = New System.Drawing.Point(398, 462)
+        Me.BtnCancel.Location = New System.Drawing.Point(693, 460)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(99, 30)
         Me.BtnCancel.TabIndex = 54
         Me.BtnCancel.Text = "انصراف"
-        Me.BtnCancel.UseVisualStyleBackColor = True
+        Me.BtnCancel.UseVisualStyleBackColor = true
         '
         'FrmMeldProduction
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 21.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 21!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(909, 524)
         Me.Controls.Add(Me.BtnCancel)
@@ -465,26 +465,26 @@ Partial Class FrmMeldProduction
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Font = New System.Drawing.Font("B Traffic", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178, Byte))
+        Me.Font = New System.Drawing.Font("B Traffic", 9!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(178,Byte))
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.KeyPreview = True
+        Me.KeyPreview = true
         Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.MinimizeBox = False
+        Me.MinimizeBox = false
         Me.Name = "FrmMeldProduction"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
+        Me.ShowIcon = false
+        Me.ShowInTaskbar = false
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "اجرای تولید"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        CType(Me.DGV1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.GroupBox2.ResumeLayout(false)
+        Me.GroupBox2.PerformLayout
+        Me.GroupBox3.ResumeLayout(false)
+        CType(Me.DGV1,System.ComponentModel.ISupportInitialize).EndInit
+        Me.StatusStrip1.ResumeLayout(false)
+        Me.StatusStrip1.PerformLayout
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TxtDate As FarsiDate.FarsiDate
