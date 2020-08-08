@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetLow_Hight" targetNamespace="http://tempuri.org/DataSetLow_Hight.xsd" xmlns:mstns="http://tempuri.org/DataSetLow_Hight.xsd" xmlns="http://tempuri.org/DataSetLow_Hight.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetLow_Hight" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="DataSetLow_Hight" msprop:Generator_UserDSName="DataSetLow_Hight" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TablePropName="DataTable1" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TypeSanad" msprop:Generator_UserColumnName="TypeSanad" msprop:Generator_ColumnPropNameInRow="TypeSanad" msprop:Generator_ColumnVarNameInTable="columnTypeSanad" msprop:Generator_ColumnPropNameInTable="TypeSanadColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Low_HightStr" msprop:Generator_UserColumnName="Low_HightStr" msprop:Generator_ColumnPropNameInRow="Low_HightStr" msprop:Generator_ColumnVarNameInTable="columnLow_HightStr" msprop:Generator_ColumnPropNameInTable="Low_HightStrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="JozStr" msprop:Generator_UserColumnName="JozStr" msprop:Generator_ColumnPropNameInRow="JozStr" msprop:Generator_ColumnVarNameInTable="columnJozStr" msprop:Generator_ColumnPropNameInTable="JozStrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="KolStr" msprop:Generator_UserColumnName="KolStr" msprop:Generator_ColumnPropNameInRow="KolStr" msprop:Generator_ColumnVarNameInTable="columnKolStr" msprop:Generator_ColumnPropNameInTable="KolStrColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PrintDat" msprop:Generator_UserColumnName="PrintDat" msprop:Generator_ColumnPropNameInRow="PrintDat" msprop:Generator_ColumnVarNameInTable="columnPrintDat" msprop:Generator_ColumnPropNameInTable="PrintDatColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Joz" msprop:Generator_UserColumnName="Joz" msprop:Generator_ColumnPropNameInRow="Joz" msprop:Generator_ColumnVarNameInTable="columnJoz" msprop:Generator_ColumnPropNameInTable="JozColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Kol" msprop:Generator_UserColumnName="Kol" msprop:Generator_ColumnPropNameInRow="Kol" msprop:Generator_ColumnVarNameInTable="columnKol" msprop:Generator_ColumnPropNameInTable="KolColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="Low_Hight" msprop:Generator_UserColumnName="Low_Hight" msprop:Generator_ColumnPropNameInRow="Low_Hight" msprop:Generator_ColumnVarNameInTable="columnLow_Hight" msprop:Generator_ColumnPropNameInTable="Low_HightColumn" type="xs:double" minOccurs="0" />
+              <xs:element name="GroupKala" msprop:Generator_UserColumnName="GroupKala" msprop:Generator_ColumnPropNameInRow="GroupKala" msprop:Generator_ColumnVarNameInTable="columnGroupKala" msprop:Generator_ColumnPropNameInTable="GroupKalaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Nam" msprop:Generator_UserColumnName="Nam" msprop:Generator_ColumnPropNameInRow="Nam" msprop:Generator_ColumnVarNameInTable="columnNam" msprop:Generator_ColumnPropNameInTable="NamColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

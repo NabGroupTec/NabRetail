@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetDaftarKol" targetNamespace="http://tempuri.org/DataSetDaftarKol.xsd" xmlns:mstns="http://tempuri.org/DataSetDaftarKol.xsd" xmlns="http://tempuri.org/DataSetDaftarKol.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TrazDataSet" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TrazDataSet (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NAB.My.MySettings.GlobalReference.Default.TrazDataSet" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TrazDataSet (MySettings)" DbObjectName="SELECT Alldata.ID,Alldata.Nam ,Alldata.Fix,Alldata.Mobile ,Alldata.Addres,BedMon=CASE Alldata.[state] WHEN N'بدهکار' THEN Allmoney +Alldata.Bed ELSE Alldata.Bed END ,BesMon=CASE Alldata.[state] WHEN N'بستانکار' THEN Allmoney +Alldata.Bes ELSE Alldata.Bes END FROM (SELECT Define_People.ID, Define_People.Nam, ISNULL(Define_People.Tell1,'') AS Fix, ISNULL(Define_People.Tell2,'') AS Mobile, Define_Ostan.NamO + ' - ' + Define_City.NamCI + ' - ' + Define_Part.NamP + ' - ' + ISNULL(Define_People.[Address],'') AS Addres,(SELECT ISNULL(SUM(MON),0) AS BED FROM Moein_People WHERE T=0 AND IDPeople =Define_People .ID )AS Bed,(SELECT ISNULL(SUM(MON),0) AS BED FROM Moein_People WHERE T=1 AND IDPeople =Define_People .ID )AS Bes,AllMoney ,[State] FROM Define_People INNER JOIN Define_Ostan ON Define_People.IdOstan = Define_Ostan.Code INNER JOIN Define_City ON Define_People.IdCity = Define_City.Code AND Define_Ostan.Code = Define_City.IdOstan INNER JOIN Define_Part ON Define_People.IdPart = Define_Part.Code AND Define_Ostan.Code = Define_Part.IdOstan AND Define_City.Code = Define_Part.IdCity)AS Alldata" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT AllKol.id,AllKol.Addres,AllKol.Nam,AllKol.BedMon ,AllKol.BesMon,
+T=Case WHEN (AllKol.bedMon-AllKol.BesMon)&gt;=0 THEN N'بد'
+            WHEN  (AllKol.bedMon-AllKol.BesMon)&lt; 0 THEN N'بس'   
+            Else  N'نا' End,
+Mandeh=Case WHEN (AllKol.bedMon-AllKol.BesMon)&gt;=0 THEN (AllKol.bedMon-AllKol.BesMon)           
+            WHEN (AllKol.bedMon-AllKol.BesMon)&lt;0 THEN (AllKol.bedMon-AllKol.BesMon)*(-1)           
+            Else 0 End,
+AllKol.Fix ,AllKol.Mobile
+FROM
+(SELECT Alldata.ID,Alldata.Nam ,Alldata.Fix,Alldata.Mobile ,Alldata.Addres,BedMon=Case Alldata.[state]  WHEN N'بدهکار' THEN Allmoney +Alldata.Bed Else  Alldata.Bed End ,BesMon=Case Alldata.[state]  WHEN N'بستانکار' THEN Allmoney +Alldata.Bes Else  Alldata.Bes End FROM (SELECT   Define_People.ID, Define_People.Nam, ISNULL(Define_People.Tell1,'') AS Fix, ISNULL(Define_People.Tell2,'') As Mobile, Define_Ostan.NamO + ' - ' + Define_City.NamCI + ' - ' + Define_Part.NamP + ' - ' + ISNULL(Define_People.[Address],'') As Addres,(SELECT ISNULL(SUM(MON),0) AS BED FROM Moein_People WHERE  T=0 AND IDPeople =Define_People .ID )As Bed,(SELECT ISNULL(SUM(MON),0) AS BED FROM Moein_People WHERE  T=1 AND IDPeople =Define_People .ID )As Bes,AllMoney ,[State]  FROM  Define_People INNER JOIN  Define_Ostan ON Define_People.IdOstan = Define_Ostan.Code INNER JOIN Define_City ON Define_People.IdCity = Define_City.Code AND Define_Ostan.Code = Define_City.IdOstan INNER JOIN Define_Part ON Define_People.IdPart = Define_Part.Code AND Define_Ostan.Code = Define_Part.IdOstan AND Define_City.Code = Define_Part.IdCity)As Alldata)As AllKol</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="Addres" DataSetColumn="Addres" />
+              <Mapping SourceColumn="Nam" DataSetColumn="Nam" />
+              <Mapping SourceColumn="BedMon" DataSetColumn="BedMon" />
+              <Mapping SourceColumn="BesMon" DataSetColumn="BesMon" />
+              <Mapping SourceColumn="T" DataSetColumn="T" />
+              <Mapping SourceColumn="Mandeh" DataSetColumn="Mandeh" />
+              <Mapping SourceColumn="Fix" DataSetColumn="Fix" />
+              <Mapping SourceColumn="Mobile" DataSetColumn="Mobile" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetDaftarKol" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetDaftarKol" msprop:Generator_UserDSName="DataSetDaftarKol">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" />
+              <xs:element name="Addres" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAddres" msprop:Generator_ColumnPropNameInRow="Addres" msprop:Generator_ColumnPropNameInTable="AddresColumn" msprop:Generator_UserColumnName="Addres" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Nam" msprop:Generator_ColumnVarNameInTable="columnNam" msprop:Generator_ColumnPropNameInRow="Nam" msprop:Generator_ColumnPropNameInTable="NamColumn" msprop:Generator_UserColumnName="Nam">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BedMon" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBedMon" msprop:Generator_ColumnPropNameInRow="BedMon" msprop:Generator_ColumnPropNameInTable="BedMonColumn" msprop:Generator_UserColumnName="BedMon" type="xs:long" minOccurs="0" />
+              <xs:element name="BesMon" msprop:Generator_ColumnVarNameInTable="columnBesMon" msprop:Generator_ColumnPropNameInRow="BesMon" msprop:Generator_ColumnPropNameInTable="BesMonColumn" msprop:Generator_UserColumnName="BesMon" type="xs:long" minOccurs="0" />
+              <xs:element name="T" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnT" msprop:Generator_ColumnPropNameInRow="T" msprop:Generator_ColumnPropNameInTable="TColumn" msprop:Generator_UserColumnName="T" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mandeh" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMandeh" msprop:Generator_ColumnPropNameInRow="Mandeh" msprop:Generator_ColumnPropNameInTable="MandehColumn" msprop:Generator_UserColumnName="Mandeh" type="xs:long" minOccurs="0" />
+              <xs:element name="Fix" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFix" msprop:Generator_ColumnPropNameInRow="Fix" msprop:Generator_ColumnPropNameInTable="FixColumn" msprop:Generator_UserColumnName="Fix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Mobile" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMobile" msprop:Generator_ColumnPropNameInRow="Mobile" msprop:Generator_ColumnPropNameInTable="MobileColumn" msprop:Generator_UserColumnName="Mobile" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Endmandeh" msprop:Generator_ColumnVarNameInTable="columnEndmandeh" msprop:Generator_ColumnPropNameInRow="Endmandeh" msprop:Generator_ColumnPropNameInTable="EndmandehColumn" msprop:Generator_UserColumnName="Endmandeh" type="xs:long" minOccurs="0" />
+              <xs:element name="EndT" msprop:Generator_ColumnVarNameInTable="columnEndT" msprop:Generator_ColumnPropNameInRow="EndT" msprop:Generator_ColumnPropNameInTable="EndTColumn" msprop:Generator_UserColumnName="EndT" type="xs:string" minOccurs="0" />
+              <xs:element name="D_Date" msprop:Generator_ColumnVarNameInTable="columnD_Date" msprop:Generator_ColumnPropNameInRow="D_Date" msprop:Generator_ColumnPropNameInTable="D_DateColumn" msprop:Generator_UserColumnName="D_Date" type="xs:string" minOccurs="0" />
+              <xs:element name="PrintDat" msprop:Generator_ColumnVarNameInTable="columnPrintDat" msprop:Generator_ColumnPropNameInRow="PrintDat" msprop:Generator_ColumnPropNameInTable="PrintDatColumn" msprop:Generator_UserColumnName="PrintDat" type="xs:string" minOccurs="0" />
+              <xs:element name="GetChk" msprop:Generator_ColumnVarNameInTable="columnGetChk" msprop:Generator_ColumnPropNameInRow="GetChk" msprop:Generator_ColumnPropNameInTable="GetChkColumn" msprop:Generator_UserColumnName="GetChk" type="xs:double" minOccurs="0" />
+              <xs:element name="PayChk" msprop:Generator_ColumnVarNameInTable="columnPayChk" msprop:Generator_ColumnPropNameInRow="PayChk" msprop:Generator_ColumnPropNameInTable="PayChkColumn" msprop:Generator_UserColumnName="PayChk" type="xs:double" minOccurs="0" />
+              <xs:element name="Kind" msprop:Generator_ColumnVarNameInTable="columnKind" msprop:Generator_ColumnPropNameInRow="Kind" msprop:Generator_ColumnPropNameInTable="KindColumn" msprop:Generator_UserColumnName="Kind" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

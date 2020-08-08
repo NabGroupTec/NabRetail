@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Traz" targetNamespace="http://tempuri.org/Traz.xsd" xmlns:mstns="http://tempuri.org/Traz.xsd" xmlns="http://tempuri.org/Traz.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="TrazDataSet" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TrazDataSet (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NAB.My.MySettings.GlobalReference.Default.TrazDataSet" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TrazDataSet (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Box,Bank,MoneyGetChk,Bed,Kala,Amval,MoneyPayChk,Bes,Sarmayeh,(Box+Bank+MoneyGetChk+Bed+Kala+Amval) As daray,(MoneyPayChk+Bes+Sarmayeh) As Pardakht FROM (SELECT ISNULL(SUM(AllMoney),0)AS Box  FROM Define_Box ) as Box,(SELECT ISNULL(SUM(AllMoney),0)AS Bank  FROM Define_Bank)as Bank,(SELECT ISNULL(SUM(MoneyChk),0) AS MoneyGetChk  FROM Chk_Get_Pay WHERE Kind =0 AND [Type]=11 AND Number_Type =0 ) as MoneyGetChk,(SELECT ISNULL(SUM(AllMoney),0)AS Bed FROM Define_People WHERE [State]=N'بدهکار') as Bed,(SELECT ISNULL(SUM(Mon),0)AS Kala  FROM Define_PrimaryKala) as Kala,(SELECT ISNULL(SUM(AllMoney),0)AS Amval  FROM Define_Amval) as Amval,(SELECT ISNULL(SUM(MoneyChk),0) AS MoneyPayChk  FROM Chk_Get_Pay WHERE Kind =1 AND [Type]=11 AND Number_Type =0) as MoneyPayChk,(SELECT ISNULL(SUM(AllMoney),0)AS Bes FROM Define_People WHERE [State]=N'بستانکار') as Bes,(SELECT ISNULL(SUM(AllSarmayeh.AllMoney),0) As Sarmayeh FROM (SELECT  Allmoney= CASE Stat WHEN N'بدهکار' THEN Allmoney *(-1) WHEN N'بستانکار' THEN Allmoney Else  0 End FROM Define_Sarmayeh )As AllSarmayeh)as Sarmayeh</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Box" DataSetColumn="Box" />
+              <Mapping SourceColumn="Bank" DataSetColumn="Bank" />
+              <Mapping SourceColumn="MoneyGetChk" DataSetColumn="MoneyGetChk" />
+              <Mapping SourceColumn="Bed" DataSetColumn="Bed" />
+              <Mapping SourceColumn="Kala" DataSetColumn="Kala" />
+              <Mapping SourceColumn="Amval" DataSetColumn="Amval" />
+              <Mapping SourceColumn="MoneyPayChk" DataSetColumn="MoneyPayChk" />
+              <Mapping SourceColumn="Bes" DataSetColumn="Bes" />
+              <Mapping SourceColumn="Sarmayeh" DataSetColumn="Sarmayeh" />
+              <Mapping SourceColumn="daray" DataSetColumn="daray" />
+              <Mapping SourceColumn="Pardakht" DataSetColumn="Pardakht" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Traz" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Traz" msprop:Generator_UserDSName="Traz">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Box" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBox" msprop:Generator_ColumnPropNameInRow="Box" msprop:Generator_ColumnPropNameInTable="BoxColumn" msprop:Generator_UserColumnName="Box" type="xs:long" minOccurs="0" />
+              <xs:element name="Bank" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBank" msprop:Generator_ColumnPropNameInRow="Bank" msprop:Generator_ColumnPropNameInTable="BankColumn" msprop:Generator_UserColumnName="Bank" type="xs:long" minOccurs="0" />
+              <xs:element name="MoneyGetChk" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMoneyGetChk" msprop:Generator_ColumnPropNameInRow="MoneyGetChk" msprop:Generator_ColumnPropNameInTable="MoneyGetChkColumn" msprop:Generator_UserColumnName="MoneyGetChk" type="xs:long" minOccurs="0" />
+              <xs:element name="Bed" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBed" msprop:Generator_ColumnPropNameInRow="Bed" msprop:Generator_ColumnPropNameInTable="BedColumn" msprop:Generator_UserColumnName="Bed" type="xs:long" minOccurs="0" />
+              <xs:element name="Kala" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnKala" msprop:Generator_ColumnPropNameInRow="Kala" msprop:Generator_ColumnPropNameInTable="KalaColumn" msprop:Generator_UserColumnName="Kala" type="xs:long" minOccurs="0" />
+              <xs:element name="Amval" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAmval" msprop:Generator_ColumnPropNameInRow="Amval" msprop:Generator_ColumnPropNameInTable="AmvalColumn" msprop:Generator_UserColumnName="Amval" type="xs:long" minOccurs="0" />
+              <xs:element name="MoneyPayChk" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnMoneyPayChk" msprop:Generator_ColumnPropNameInRow="MoneyPayChk" msprop:Generator_ColumnPropNameInTable="MoneyPayChkColumn" msprop:Generator_UserColumnName="MoneyPayChk" type="xs:long" minOccurs="0" />
+              <xs:element name="Bes" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnBes" msprop:Generator_ColumnPropNameInRow="Bes" msprop:Generator_ColumnPropNameInTable="BesColumn" msprop:Generator_UserColumnName="Bes" type="xs:long" minOccurs="0" />
+              <xs:element name="Sarmayeh" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSarmayeh" msprop:Generator_ColumnPropNameInRow="Sarmayeh" msprop:Generator_ColumnPropNameInTable="SarmayehColumn" msprop:Generator_UserColumnName="Sarmayeh" type="xs:long" minOccurs="0" />
+              <xs:element name="daray" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndaray" msprop:Generator_ColumnPropNameInRow="daray" msprop:Generator_ColumnPropNameInTable="darayColumn" msprop:Generator_UserColumnName="daray" type="xs:long" minOccurs="0" />
+              <xs:element name="Pardakht" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnPardakht" msprop:Generator_ColumnPropNameInRow="Pardakht" msprop:Generator_ColumnPropNameInTable="PardakhtColumn" msprop:Generator_UserColumnName="Pardakht" type="xs:long" minOccurs="0" />
+              <xs:element name="MonTraz" msprop:Generator_ColumnVarNameInTable="columnMonTraz" msprop:Generator_ColumnPropNameInRow="MonTraz" msprop:Generator_ColumnPropNameInTable="MonTrazColumn" msprop:Generator_UserColumnName="MonTraz" type="xs:long" minOccurs="0" />
+              <xs:element name="D_date" msprop:Generator_ColumnVarNameInTable="columnD_date" msprop:Generator_ColumnPropNameInRow="D_date" msprop:Generator_ColumnPropNameInTable="D_dateColumn" msprop:Generator_UserColumnName="D_date" type="xs:string" minOccurs="0" />
+              <xs:element name="Sod" msprop:Generator_ColumnVarNameInTable="columnSod" msprop:Generator_ColumnPropNameInRow="Sod" msprop:Generator_ColumnPropNameInTable="SodColumn" msprop:Generator_UserColumnName="Sod" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
