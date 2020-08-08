@@ -263,7 +263,7 @@ Public Class FrmEndAccounting
     End Sub
 
     Private Function AreYouAddAccounting(ByVal PeriodName As String, ByVal id As Long) As Boolean
-        Dim DataSource2 As String = "Data Source=127.0.0.1;Initial Catalog=Manage_Nab;User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0"
+        Dim DataSource2 As String = "Data Source=127.0.0.1;Initial Catalog=Manage_Nab;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0"
         Dim ConectionBank2 As New SqlClient.SqlConnection(DataSource2)
         Try
 

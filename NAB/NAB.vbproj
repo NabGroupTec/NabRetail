@@ -141,6 +141,10 @@
     <Reference Include="Janus.Windows.UI.v3">
       <HintPath>bin\Release\Janus.Windows.UI.v3.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.UI.Winforms.Controls, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Dynamics.Framework.UI.Winforms.Controls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -278,6 +282,12 @@
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmProductionFormulas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HomePage.Designer.vb">
+      <DependentUpon>HomePage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HomePage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module Functions\ApplicationEvents.vb" />
@@ -3145,6 +3155,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -3562,6 +3573,9 @@
     <Compile Include="Forms\Vosol_chk.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserControl\NavigationTab.vb">
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\ActiveSMS.resx">
@@ -3651,6 +3665,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProductionFormulas.resx">
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HomePage.resx">
+      <DependentUpon>HomePage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
@@ -5556,6 +5573,7 @@
     <None Include="Resources\Close.sql" />
     <None Include="Image\Formula.png" />
     <None Include="Image\Tolid.png" />
+    <None Include="Resources\LoginLogoUser.png" />
     <Content Include="Resources\NNLogin.png" />
     <Content Include="Resources\Process.png" />
     <Content Include="Resources\Succed.png" />
@@ -6201,6 +6219,7 @@
     <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

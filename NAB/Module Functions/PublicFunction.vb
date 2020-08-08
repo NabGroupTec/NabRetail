@@ -15,6 +15,8 @@ Module PublicFunction
     Public ConectionBank As New SqlClient.SqlConnection()
 
     Public S32 As Boolean
+    Public UserDB as string="Nab_User"
+    Public PasswordDB as string="q1w2e3r4t5"
     '
     Public FontName As String = "IRANSans"
     Public FontSize As Single = 9.0F

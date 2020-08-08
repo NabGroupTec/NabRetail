@@ -244,7 +244,7 @@ Public Class FrmMain
                                 Exit Sub
                             End If
 
-                            Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=Nab_User;Password=q1w2e3r4t5")
+                            Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB)
                             If SqlCon.State <> ConnectionState.Open Then SqlCon.Open()
 
                             Dim dt As New DataTable

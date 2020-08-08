@@ -13,9 +13,9 @@ Public Class FrmActionEnd
         PDatabase.Minimum = 0
         PDatabase.Maximum = 15
         PDatabase.Value = 0
-        Dim Datas1 As String = "Data Source=127.0.0.1;User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0"
+        Dim Datas1 As String = "Data Source=127.0.0.1;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0"
         Dim Con1 As New SqlClient.SqlConnection(Datas1)
-        Dim DataS2 As String = "Data Source=127.0.0.1;Initial Catalog=Manage_Nab;User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0"
+        Dim DataS2 As String = "Data Source=127.0.0.1;Initial Catalog=Manage_Nab;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0"
         Dim Con2 As New SqlClient.SqlConnection(DataS2)
 
         If ConectionBank.State <> ConnectionState.Open Then ConectionBank.Open()
@@ -71,7 +71,7 @@ Public Class FrmActionEnd
             End Using
             PDatabase.Value += 1
             Application.DoEvents()
-            Dim DataSource3 As String = "Data Source=127.0.0.1;Initial Catalog=" + CStr(Db_name) + ";User ID=Nab_User;Password=q1w2e3r4t5;Connection Timeout=0"
+            Dim DataSource3 As String = "Data Source=127.0.0.1;Initial Catalog=" + CStr(Db_name) + ";User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB & ";Connection Timeout=0"
             Dim ConectionBank3 As New SqlClient.SqlConnection(DataSource3)
             If ConectionBank3.State <> ConnectionState.Open Then ConectionBank3.Open()
             PDatabase.Value += 1
@@ -464,7 +464,7 @@ Public Class FrmActionEnd
                 PBackUp.Value += 1
                 Application.DoEvents()
 
-                Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=Nab_User;Password=q1w2e3r4t5")
+                Dim SqlCon As New SqlConnection("Data Source=LocalHost;User ID=" & PublicFunction.UserDB & ";Password=" & PublicFunction.PasswordDB)
                 If SqlCon.State <> ConnectionState.Open Then SqlCon.Open()
 
                 Dim dt As New DataTable
