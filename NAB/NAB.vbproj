@@ -111,6 +111,10 @@
       <HintPath>bin\Debug\CrystalDecisions.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.34, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
     <Reference Include="Divelements.SandRibbon, Version=1.6.6.1, Culture=neutral, PublicKeyToken=5fd520d36328f741, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Divelements.SandRibbon.dll</HintPath>
@@ -282,12 +286,6 @@
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FrmProductionFormulas.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HomePage.Designer.vb">
-      <DependentUpon>HomePage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\HomePage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module Functions\ApplicationEvents.vb" />
@@ -3665,9 +3663,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmProductionFormulas.resx">
       <DependentUpon>FrmProductionFormulas.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HomePage.resx">
-      <DependentUpon>HomePage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
