@@ -445,7 +445,7 @@ Partial Class FrmMeldProduction
         '
         Me.BtnCancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BtnCancel.Location = New System.Drawing.Point(693, 460)
+        Me.BtnCancel.Location = New System.Drawing.Point(398, 462)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(99, 30)
         Me.BtnCancel.TabIndex = 54
